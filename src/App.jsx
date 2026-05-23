@@ -8,23 +8,86 @@ import Home from "./pages/Home/Home";
 import InquiryForm from "./components/layout/InquiryForm";
 import Courses from "./pages/courses/Courses";
 import WhatsappButton from "./components/layout/WhatsappButton";
+import { motion } from "framer-motion";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay (e.g., fetching data or assets)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the delay as needed (2 seconds here)
+    }, 2000);
 
-    return () => clearTimeout(timer); // Cleanup the timer
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-100">
-        <h1>Loading...</h1>
+      <div className="h-screen w-full bg-white flex items-center justify-center overflow-hidden">
+        
+        <div className="flex flex-col items-center gap-6">
+
+          {/* Animated Logo Circle */}
+          <div className="relative flex items-center justify-center">
+            
+            {/* Outer Ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                repeat: Infinity,
+                duration: 3,
+                ease: "linear",
+              }}
+              className="w-24 h-24 rounded-full border-4 border-orange-200 border-t-orange-500"
+            />
+
+            {/* Inner Circle */}
+            <div className="absolute w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+              <h1 className="text-white font-bold text-xl">
+                TS
+              </h1>
+            </div>
+          </div>
+
+          {/* Loading Text */}
+          <div className="text-center">
+            <motion.h1
+              initial={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                repeat: Infinity,
+                duration: 1,
+                repeatType: "reverse",
+              }}
+              className="text-2xl font-bold text-gray-800"
+            >
+              ThreeSyntax
+            </motion.h1>
+
+            {/* <p className="text-gray-500 mt-1 text-sm">
+              Loading Experience...
+            </p> */}
+          </div>
+
+          {/* Bottom Dots */}
+          <div className="flex items-center gap-2">
+            {[0, 1, 2].map((dot) => (
+              <motion.div
+                key={dot}
+                animate={{
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  delay: dot * 0.2,
+                }}
+                className="w-3 h-3 bg-orange-500 rounded-full"
+              />
+            ))}
+          </div>
+
+        </div>
       </div>
     );
   }
@@ -33,8 +96,10 @@ function App() {
     <Router>
       <ScrollToTop />
       <WhatsappButton />
+
       <Routes>
         <Route path="/" element={<Home />} />
+        
         {/* <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<ContactPage />} />
