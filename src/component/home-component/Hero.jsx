@@ -8,8 +8,8 @@ const Hero = () => {
   // Variants for text animation
   const textVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.8,
@@ -31,105 +31,113 @@ const Hero = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
+    id="home"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className='h-full w-full pt-12 md:pt-28 bg-gradient-to-r from-blue-600 to-purple-600 overflow-hidden'
+      className='h-full w-full pt-24 pb-10 md:pt-28 bg-white overflow-hidden px-4 sm:px-6'
     >
-      <div className='sm:px-32 inset-0 h-full w-full'>
-        <div className='flex flex-col lg:flex-row gap-10 h-full w-full p-3 md:py-5'>
+      <div className='sm:px-6 lg:px-20 inset-0 h-full w-full'>
+        <div className='flex flex-col lg:flex-row items-center lg:items-end justify-center gap-8 lg:gap-10 h-full w-full'>
+
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             variants={textVariants}
-            className='lg:w-[50%] xl:w-[60%] w-full h-full pt-10 text-center'
+            className='w-full lg:max-w-[60%] h-full pt-4 md:pt-10 text-center'
           >
-            <motion.div 
+            <motion.div
               variants={textVariants}
               initial="hidden"
               animate="visible"
             >
-              {/* <motion.h1 
-                variants={textVariants}
-                className='text-3xl md:text-4xl md:mt-10 font-bold text-white md:leading-[55px] tracking-tight'
-              >
-                Become a High-Paid <span className='text-black md:bg-white md:px-5 md:py-2 rounded-md'>Full Stack Developer</span><br />
-                Non IT Background ?
-              </motion.h1> */}
-              <div className='hidden lg:block'>
-              <motion.h1 
-                variants={textVariants}
-                className='text-3xl md:text-4xl md:mt-10 text-center font-bold text-white md:leading-[55px] tracking-tight'
-              >
-                Become a High-Paid <br className='md:hidden' /> <span className='px-5 py-1 bg-white rounded-md'>
-                <AnimatedWordCycle 
-                words={[
-                    "Developer",
-                    "Designer",
-                    "Programmer",
-                    "Engineer",
-                    "Coder",
-                ]}
-                interval={3000}
-                className={"text-black "} 
-            /> 
-                </span>
-                 <br className='hidden md:block' />Non IT Background ?
-              </motion.h1>
+
+              {/* Desktop Heading */}
+              <div className=''>
+                <motion.h1
+                  variants={textVariants}
+                  className='text-2xl md:text-4xl md:mt-10 text-center font-bold text-black md:leading-[55px] tracking-tight'
+                >
+                  Become a High-Paid <br className='md:hidden' />
+
+                  <span className='hidden md:inline px-2 py-1 mx-2 bg-orange-500 rounded-md text-white '>
+                    <AnimatedWordCycle
+                      words={[
+                        "Developer",
+                        "Designer",
+                        "Programmer",
+                        "Engineer",
+                        "Coder",
+                      ]}
+                      interval={3000}
+                      className={"text-white"}
+                    />
+                  </span>
+                   <span className='md:hidden px-2 py-1 mx-2 bg-orange-500 rounded-md text-white '>
+                    Devloper
+                  </span>
+
+                  <br className='hidden md:block' />
+
+                  <span className='text-gray-700'>
+                    Non IT Background ?
+                  </span>
+                </motion.h1>
               </div>
-              
-              <div className='lg:hidden'>
-              <motion.h1 
-                variants={textVariants}
-                className='text-3xl md:text-4xl md:mt-10 text-center font-bold text-white md:leading-[55px] tracking-tight'
-              >
-                Become a High-Paid Full Stack Developer Non IT Background ?
-              </motion.h1>
-              </div>
-              
-              <motion.h2 
-                variants={textVariants}
-                className='text-sm md:text-md text-semibold text-white mt-2 tracking-wide'
-              >
-                No Problem ! Start Your Java Journey Today !
-              </motion.h2>
+
+              {/* Mobile Heading */}
+              {/* <div className='lg:hidden'>
+                <motion.h1
+                  variants={textVariants}
+                  className='text-[28px] sm:text-4xl leading-[38px] sm:leading-[50px] text-center font-bold text-black tracking-tight'
+                >
+                  Become a High-Paid Full Stack Developer
+                  <span className='text-gray-700 block mt-2'>
+                    Non IT Background ?
+                  </span>
+                </motion.h1>
+              </div> */}
+
             </motion.div>
 
-            {/* Image Slider with Animation */}
-            <motion.div 
+            {/* Image Slider */}
+            <motion.div
               variants={textVariants}
-              id='hero-slider' 
+              id='hero-slider'
               className='w-full h-full mt-6'
-            > 
+            >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ 
-                  type: "spring", 
-                  stiffness: 100, 
-                  damping: 10 
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10
                 }}
+                className='rounded-2xl overflow-hidden shadow-xl border border-orange-200'
               >
-                <ImageSlider/>
+                <ImageSlider />
               </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Form Section */}
           <motion.div
-           initial={{ opacity: 0, x: 50 }}
-           animate={{ opacity: 1, x: 0 }}
-           transition={{ 
-             type: "spring", 
-             stiffness: 100, 
-             delay: 0.5 
-           }} 
-            // variants={textVariants}
-            id='form' 
-            className='h-auto w-full lg:w-[40%] flex-grow'
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              delay: 0.5
+            }}
+            id='form'
+            className='w-full lg:max-w-[40%]'
           >
+            <div className='w-full'>
               <Form />
+            </div>
           </motion.div>
+
         </div>
       </div>
     </motion.div>

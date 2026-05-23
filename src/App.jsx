@@ -7,6 +7,7 @@ import ScrollToTop from "./components/layout/TopScroll";
 import Home from "./pages/Home/Home";
 import InquiryForm from "./components/layout/InquiryForm";
 import Courses from "./pages/courses/Courses";
+import WhatsappButton from "./components/layout/WhatsappButton";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,13 +32,14 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <WhatsappButton />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/form" element={<InquiryForm />} />
+        <Route path="/form" element={<InquiryForm />} /> */}
       </Routes>
     </Router>
   );

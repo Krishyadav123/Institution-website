@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ... */
 
 @layer base {
@@ -108,7 +114,7 @@
     --chart-5: 340 75% 55%
   }
 }
-
+/* 
 @layer base {
   * {
     @apply border-border;
@@ -128,7 +134,7 @@
   width: 0%;
   height: 100%;
   background-color: white;
-  animation: none; /* Animation dynamically set via JavaScript */
+  animation: none; 
 }
 
 @keyframes grow {
@@ -138,7 +144,7 @@
   100% {
     width: 100%;
   }
-}
+} */
 
 /* .Raleway {
   font-family: 'Raleway', sans-serif;

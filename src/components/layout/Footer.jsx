@@ -1,95 +1,175 @@
-import React from 'react';
-// import { Facebook, Twitter, Instagram, Linkedin, Whatsapp } from 'lucide-react';
-import instagram from '../../assets/instagram.svg'
-import facebook from '../../assets/facebook.svg'
-import linkedin from '../../assets/linkedin.svg'
-// import twitter from '../assets/twitter.svg'
-import whatsapp from '../../assets/whatsapp.svg'
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  MessageCircle,
+  ArrowRight,
+  GraduationCap,
+} from "lucide-react";
+import scrollToSection from "./ScrollToSection";
+
+const footerLinks = [
+  { label: "Home",         id: "home"         },
+  { label: "About Us",     id: "about"        },
+  { label: "Courses",      id: "courses"      },
+  { label: "Placements",   id: "placement"    },
+  { label: "Contact",      id: "contact"      },
+];
+
+const courses = [
+  "MERN Stack",
+  "React Native",
+  "AI & ML",
+  "Python",
+  "Digital Marketing",
+  "UI/UX Design",
+  "N8N Automation",
+];
+
+const contactInfo = [
+  { Icon: Phone,  text: "+91 9343760176"                          },
+  { Icon: Mail,   text: "hello@threesyntax.com"                    },
+  { Icon: MapPin, text: "162-A 1st Floor, MangalCity Mall, Above Vishal Mega Mart, Vijay Nagar, Indore, MP India"      },
+];
+
+const socials = [
+  { Icon: Facebook,       href: "#", label: "Facebook"   },
+  { Icon: MessageCircle,  href: "#", label: "WhatsApp"   },
+  { Icon: Linkedin,       href: "#", label: "LinkedIn"   },
+  { Icon: Instagram,      href: "#", label: "Instagram"  },
+];
+
+// ── Scroll helper (same logic as Navbar) ──────────────────────────────────
 
 const Footer = () => {
-  const whatsappNumber = "9171019136"
-  
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=I+am+interested+in+your+products.+Please+share+the+details`
   return (
-    <footer className="text-gray-300 bg-gradient-to-r from-blue-600 to-purple-600 border-t-2 border-white py-20 px-5 md:px-20 lg:px-40"
-    // style={{
-    //   backgroundColor: '#283B59',
-    //   backgroundImage: `radial-gradient(white 10%, transparent 11%)`,
-    //   backgroundSize: '10px 10px'
-    // }}
-    >
-      <div>
-          {/* Logo and Description */}
-          <div className='flex flex-col gap-10 lg:flex-row  justify-between'>
+    <footer className="bg-white border-t border-orange-100 overflow-hidden">
 
-          <div className="w-full">
-            <h2 className="text-white text-3xl font-bold mb-4">MCED Footer</h2>
-            {/* <img src="https://res.cloudinary.com/dhf8eyjee/image/upload/v1742973215/Image-Shree/Home-page/yk7lkqlp68f4nrhnhnvf.png" alt="Shree Engineers" className="w-60" /> */}
-            <p className="text-white text-lg font-semibold mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quidem nulla consequuntur ipsa quae obcaecati, sint voluptate facilis repudiandae! Velit.
+      {/* ── Top CTA Banner ── */}
+      <div className="bg-orange-500">
+        <div className="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <h3 className="text-white text-lg md:text-xl font-semibold">
+              Ready to Start Your Tech Journey?
+            </h3>
+            <p className="text-orange-100 text-sm mt-1">
+              Learn practical skills with real-world projects and mentorship.
             </p>
           </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
-          {/* Navigation */}
-          <div>
-            <h3 className="text-white font-semibold text-xl mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              <li><Link to='/' className="text-white transition">Home</Link></li>
-              <li><Link to='/about' className="text-white transition">About Us</Link></li>
-              <li><Link to='/services' className="text-white transition">Services</Link></li>
-              <li><Link to='/contact' className="text-white transition">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Information */}
-          <div>
-            <h3 className="text-white font-semibold text-xl mb-4">Information</h3>
-            <ul className="space-y-2 text-white">
-              <li>8718812605</li>
-              <li>info@shreeengineers.in</li>
-              <li>416, Prem Trade Centre, Maharani Road, Indore, Madhya Pradesh, India 452007</li>
-            </ul>
-          </div>
-
-          {/* Opening Hours */}
-          <div>
-            <h3 className="text-white font-semibold text-xl mb-4">Opening Hours</h3>
-            <ul className="space-y-2 text-white">
-              <li>10:00am - 7:00pm</li>
-              {/* <li>Fri 8:00 - 21:00</li>
-              <li>Sat 9:30 - 15: 00</li> */}
-              <li>Sun off</li>
-            </ul>
-          </div>
-        </div>
-          </div>
-
-        {/* Copyright and Social Icons */}
-        <div className="mt-12 pt-6 border-t border-white flex flex-col md:flex-row justify-center items-center">
-          {/* <p className="text-sm mb-4 md:mb-0">
-            Copyright ©2020 All rights reserved | Block is made with by 
-            <a href="#" className="text-blue-400 hover:text-blue-300 ml-1">Mudassar Chaudhry</a>
-          </p> */}
-          
-          <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61566026194334" target='_blank' className="text-white hover:text-orange-400 transition">
-              <img src={facebook} alt="Facebook" className="w-10" />
-            </a>
-            <a href={whatsappLink} target='_blank' className="text-white hover:text-orange-400 transition">
-              <img src={whatsapp} alt="Whatsapp" className="w-10" />
-            </a>
-            <a href="https://www.linkedin.com/company/shree-insulation/about/?viewAsMember=true" target='_blank' className="text-white hover:text-orange-400 transition">
-              <img src={linkedin} alt="Linkedin" className="w-10" />
-            </a>
-            <a href="https://www.instagram.com/shree.insul/" target='_blank' className="text-white hover:text-orange-400 transition">
-              <img src={instagram} alt="Instagram" className="w-10" />
-            </a>
-            
-          </div>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="shrink-0 bg-white text-orange-500 px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            Get in Touch
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
+
+      {/* ── Main Footer ── */}
+      <div className="max-w-7xl mx-auto px-5 py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-orange-500 flex items-center justify-center shrink-0">
+                <GraduationCap className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-black">
+                Three<span className="text-orange-500">Syntax</span>
+              </h2>
+            </div>
+
+            <p className="text-gray-500 text-sm leading-7 max-w-xs">
+              ThreeSyntax helps students learn modern tech skills with practical
+              training, live projects and industry-focused learning.
+            </p>
+
+            {/* Socials */}
+            <div className="flex items-center gap-3 mt-6">
+              {socials.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-xl border border-orange-100 flex items-center justify-center text-gray-500 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-black font-bold text-base mb-5">Quick Links</h3>
+            <ul className="space-y-3">
+              {footerLinks.map(({ label, id }) => (
+                <li key={label}>
+                  <button
+                    onClick={() => scrollToSection(id)}
+                    className="text-gray-500 text-sm hover:text-orange-500 transition-all duration-300 flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3.5 h-3.5 text-orange-400 group-hover:translate-x-0.5 transition-transform duration-200" />
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Popular Courses — non-clickable */}
+          <div>
+            <h3 className="text-black font-bold text-base mb-5">Popular Courses</h3>
+            <ul className="space-y-3">
+              {courses.map((course) => (
+                <li
+                  key={course}
+                  className="text-gray-500 text-sm flex items-center gap-2"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0" />
+                  {course}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-black font-bold text-base mb-5">Contact Info</h3>
+            <div className="space-y-4">
+              {contactInfo.map(({ Icon, text }) => (
+                <div key={text} className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0 mt-0.5">
+                    <Icon className="w-4 h-4 text-orange-500" />
+                  </div>
+                  <p className="text-sm text-gray-500 leading-6">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-orange-100 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-gray-400">
+            © {new Date().getFullYear()} ThreeSyntax. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-400">
+            Built with <span className="text-orange-500">♥</span> by ThreeSyntax
+          </p>
+        </div>
+      </div>
+
     </footer>
   );
 };

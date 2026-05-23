@@ -7,16 +7,16 @@ import { Autoplay, EffectFade } from "swiper/modules";
 const ImageSlider = () => {
     const data = {
         images: [
-            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1742633991/Avrach-Portfolio/pfhtrpa7zdvroou3zkax.png",
-            "https://demo.bosathemes.com/educator/wp-content/uploads/sites/29/2022/06/educator-img12.jpg",
-            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1742816878/Avrach-Portfolio/bhnfpxqyqnxyb31zhjm6.png",
-            "https://demo.bosathemes.com/educator/wp-content/uploads/sites/29/2022/06/educator-img12.jpg",
+            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1779448240/ChatGPT_Image_May_22_2026_04_39_03_PM_vlcxup.png",
+            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1779448400/ChatGPT_Image_May_22_2026_04_43_11_PM_ypgun3.png",
+            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1779448518/ChatGPT_Image_May_22_2026_04_45_11_PM_fqjupd.png",
+            "https://res.cloudinary.com/dhf8eyjee/image/upload/v1779448679/ChatGPT_Image_May_22_2026_04_47_52_PM_kqvu4t.png",
           ],
       };
   return (
     <div>
-        <div className="w-full mt-10">
-            <div className="px-8 md:px-14 h-60">
+        <div className="w-full">
+            <div className=" md:px-20 md:py-10 h-64 md:h-96 rounded-lg bg-orange-100">
               <Swiper
                 effect="fade"
                 fadeEffect={{ crossFade: true }}
@@ -32,13 +32,13 @@ const ImageSlider = () => {
                     <img
                       src={image}
                       alt={`Slide ${i + 1}`}
-                      className="w-full h-full rounded-t-md object-cover"
+                      className="w-full h-full rounded-lg object-cover"
                     />
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
-            <div className="bg-white w-full h-14 rounded-md"></div>
+            
           </div>
     </div>
   )
