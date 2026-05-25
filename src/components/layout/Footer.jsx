@@ -33,15 +33,13 @@ const courses = [
 
 const contactInfo = [
   { Icon: Phone,  text: "+91 9343760176"                          },
-  { Icon: Mail,   text: "hello@threesyntax.com"                    },
+  { Icon: Mail,   text: "contact@threesyntax.com"                    },
   { Icon: MapPin, text: "162-A 1st Floor, MangalCity Mall, Above Vishal Mega Mart, Vijay Nagar, Indore, MP India"      },
 ];
 
 const socials = [
-  { Icon: Facebook,       href: "#", label: "Facebook"   },
-  { Icon: MessageCircle,  href: "#", label: "WhatsApp"   },
-  { Icon: Linkedin,       href: "#", label: "LinkedIn"   },
-  { Icon: Instagram,      href: "#", label: "Instagram"  },
+  { Icon: Linkedin,       href: "https://www.linkedin.com/company/threesyntax/?originalSubdomain=in", label: "LinkedIn"   },
+  { Icon: Instagram,      href: "https://www.instagram.com/threesyntax/", label: "Instagram"  },
 ];
 
 // ── Scroll helper (same logic as Navbar) ──────────────────────────────────

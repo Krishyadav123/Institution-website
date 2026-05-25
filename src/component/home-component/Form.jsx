@@ -184,7 +184,7 @@ const Form = () => {
 
         {/* Topics */}
         <div className="flex flex-wrap gap-4 mt-5">
-          {["Fullstack Java", "Internship", "Live Projects"].map((topic) => (
+          {["Full-stack", "Internship", "Live Projects"].map((topic) => (
             <div className="flex items-center gap-2" key={topic}>
               <Checkbox
                 checked={formData.topics.includes(topic)}

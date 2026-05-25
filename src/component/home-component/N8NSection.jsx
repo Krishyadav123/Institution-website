@@ -15,6 +15,7 @@ import {
   ChevronRight,
   Play,
   Sparkles,
+  Calendar,
 } from "lucide-react";
 import n8n from "../../assets/n8n.png";
 
@@ -238,23 +239,25 @@ const N8nSection = () => {
             viewport={{ once: true }}
             className="flex flex-wrap items-center gap-3"
           >
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 bg-[#ea4b71] hover:bg-[#d43a5f] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors duration-200"
-            >
-              <Zap className="w-4 h-4" />
-              Enroll Now — ₹999
-            </motion.button>
+           <motion.button
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+  onClick={() => window.open("https://n8nindore.com", "_blank")}
+  className="flex items-center gap-2 bg-[#ea4b71] hover:bg-[#d43a5f] text-white rounded-lg px-6 py-3 text-sm font-semibold transition-colors duration-200"
+>
+  <Zap className="w-4 h-4" />
+  Enroll Now — ₹999
+</motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 bg-transparent border border-[#ea4b71]/40 hover:border-[#ea4b71] text-[#ea4b71] rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200"
-            >
-              <Play className="w-4 h-4" />
-              Watch Free Demo
-            </motion.button>
+<motion.button
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.97 }}
+  onClick={() => window.open("https://n8nindore.com", "_blank")}
+  className="flex items-center gap-2 bg-transparent border border-[#ea4b71]/40 hover:border-[#ea4b71] text-[#ea4b71] rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200"
+>
+  <Calendar className="w-4 h-4" />
+  Book Free Demo
+</motion.button>
 
             <motion.span
               animate={{ scale: [1, 1.05, 1] }}

@@ -12,27 +12,20 @@ const Navbar = () => {
     { id: "courses",      label: "Courses"      },
     { id: "placement",    label: "Placement"    },
     { id: "testimonials", label: "Testimonials" },
-    { id: "trending",      label: "Trending"      },
+    { id: "trending",     label: "Trending", hot: true },
   ];
 
-  // ── Robust scroll — works on iOS Safari, Android Chrome, all desktops ──
   const scrollToSection = (id) => {
     setIsOpen(false);
-
-    // Small timeout lets the mobile menu close/animate before scrolling
     setTimeout(() => {
       const section = document.getElementById(id);
       if (!section) return;
-
-      // Get the navbar height so we don't scroll under it
       const navbar = document.querySelector("nav");
       const navbarHeight = navbar ? navbar.offsetHeight + 16 : 80;
-
       const top =
         section.getBoundingClientRect().top +
         window.pageYOffset -
         navbarHeight;
-
       window.scrollTo({ top, behavior: "smooth" });
     }, 150);
   };
@@ -45,10 +38,6 @@ const Navbar = () => {
 
           {/* Logo */}
           <button onClick={() => scrollToSection("home")} className="flex items-center">
-            {/* <h1 className="text-2xl font-extrabold tracking-tight">
-              <span className="text-black">Three</span>
-              <span className="text-orange-500">Syntax</span>
-            </h1> */}
             <img
               src={logo}
               alt="ThreeSyntax Logo"
@@ -62,9 +51,15 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition-all duration-300"
+                className="relative px-4 py-2.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition-all duration-300"
               >
                 {link.label}
+                {link.hot && (
+                  <span className="absolute top-2 right-1 flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -103,9 +98,15 @@ const Navbar = () => {
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition-all duration-300"
+                    className="relative text-left px-4 py-3 rounded-xl text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition-all duration-300"
                   >
                     {link.label}
+                    {link.hot && (
+                      <span className="absolute top-3.5 ml-1.5 inline-flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                      </span>
+                    )}
                   </button>
                 ))}
 

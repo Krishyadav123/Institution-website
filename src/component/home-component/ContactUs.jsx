@@ -201,7 +201,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="text-black font-semibold mb-1">Email Address</h4>
-                    <p className="text-gray-600 text-sm">hello@threesyntax.com</p>
+                    <p className="text-gray-600 text-sm">contact@threesyntax.com</p>
                   </div>
                 </div>
 
@@ -212,7 +212,7 @@ const ContactUs = () => {
                   <div>
                     <h4 className="text-black font-semibold mb-1">Phone Number</h4>
                     <p className="text-gray-600 text-sm">
-                      +91 9343760176, 9109859062, 9171019136
+                      +91 9343760176, 9109859062
                     </p>
                   </div>
                 </div>
