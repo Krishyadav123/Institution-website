@@ -11,6 +11,7 @@ import React from 'react'
 import Testimonials from '@/component/home-component/Testimonials'
 import ContactUs from '@/component/home-component/ContactUs'
 import PlacementSection from '@/component/home-component/PlacementSection'
+import N8NSection from '@/component/home-component/N8NSection'
 
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
       <Navbar />
       <Hero />
       <ImageCarousel />
+      <N8NSection/>
       <ExploreCourses />
       <PlacementSection/>
       <WhyChooseUs />

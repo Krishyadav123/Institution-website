@@ -11,6 +11,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import scrollToSection from "./ScrollToSection";
+import logo from "../../assets/logo.png";
 
 const footerLinks = [
   { label: "Home",         id: "home"         },
@@ -78,12 +79,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-orange-500 flex items-center justify-center shrink-0">
-                <GraduationCap className="w-5 h-5 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-black">
-                Three<span className="text-orange-500">Syntax</span>
-              </h2>
+             <img
+                src={logo}
+                alt="ThreeSyntax Logo"
+                className="w-40 h-auto object-contain"
+              />
             </div>
 
             <p className="text-gray-500 text-sm leading-7 max-w-xs">

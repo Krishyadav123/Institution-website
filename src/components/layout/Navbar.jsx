@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
     { id: "courses",      label: "Courses"      },
     { id: "placement",    label: "Placement"    },
     { id: "testimonials", label: "Testimonials" },
-    { id: "contact",      label: "Contact"      },
+    { id: "trending",      label: "Trending"      },
   ];
 
   // ── Robust scroll — works on iOS Safari, Android Chrome, all desktops ──
@@ -44,10 +45,15 @@ const Navbar = () => {
 
           {/* Logo */}
           <button onClick={() => scrollToSection("home")} className="flex items-center">
-            <h1 className="text-2xl font-extrabold tracking-tight">
+            {/* <h1 className="text-2xl font-extrabold tracking-tight">
               <span className="text-black">Three</span>
               <span className="text-orange-500">Syntax</span>
-            </h1>
+            </h1> */}
+            <img
+              src={logo}
+              alt="ThreeSyntax Logo"
+              className="w-40 h-auto object-contain"
+            />
           </button>
 
           {/* Desktop Menu */}

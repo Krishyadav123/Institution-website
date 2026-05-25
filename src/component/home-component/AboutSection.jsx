@@ -36,7 +36,7 @@ function useCountUp(target, duration = 1800, start = false) {
 
 // ── Data ───────────────────────────────────────────────────────────────────
 const stats = [
-  { id: "placed",    target: 2500, suffix: "+", label: "Students Placed"  },
+  { id: "placed",    target: 100, suffix: "+", label: "Students Placed"  },
   { id: "courses",   target: 12,   suffix: "+", label: "Courses Offered"  },
   { id: "placement", target: 94,   suffix: "%", label: "Placement Rate"   },
 ];
@@ -202,7 +202,7 @@ const AboutSection = () => {
                 >
                   Our Story →
                 </motion.button>
-                <motion.button
+                {/* <motion.button
                  onClick={() => scrollToSection("contact")}
                   whileHover={{ scale: 1.03, backgroundColor: "#fff3e8" }}
                   whileTap={{ scale: 0.97 }}
@@ -210,7 +210,7 @@ const AboutSection = () => {
                   style={{ fontFamily: "'Sora', sans-serif" }}
                 >
                   Meet the Team
-                </motion.button>
+                </motion.button> */}
               </motion.div>
 
               <motion.div
